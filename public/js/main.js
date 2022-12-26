@@ -46,8 +46,9 @@ socket.on("message", (msg) => {
 // DOM manipulation
 function outputMessage(message) {
   const div = document.createElement("div");
+  const name = message.username === username ? "You" : message.username;
   div.classList.add("message");
-  div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+  div.innerHTML = `<p class="meta">${name} <span>${message.time}</span></p>
     <p class="text">
       ${message.text}
     </p>`;
